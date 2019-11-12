@@ -26,28 +26,6 @@ let store;
 //  store = databox.NewStoreClient(redditSimulatorDataStore, DATABOX_ARBITER_ENDPOINT, false);
 //}
 
-var input = document.getElementById("myFile");
-var output = document.getElementById("output");
-
-input.addEventListener("change", function () {
-  if (this.files && this.files[0]) {
-    var myFile = this.files[0];
-    var reader = new FileReader();
-    
-    reader.addEventListener('load', function (e) {
-      output.textContent = e.target.result;
-    });
-    
-    reader.readAsBinaryString(myFile);
-  }
-});
-
-<input type="file" id="myFile">
-
-<div id="output"></div>
-
-
-
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -63,8 +41,6 @@ app.get('/ui', function (req, res) {
 app.get('/status', function (req, res) {
   res.send('active');
 });
-
-
 
 //when testing, we run as http, (to prevent the need for self-signed certs etc);
 if (DATABOX_TESTING) {
