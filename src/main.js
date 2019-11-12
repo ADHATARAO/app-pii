@@ -38,6 +38,18 @@ app.get('/ui', function (req, res) {
   `);
 });
 
+
+app.get('/ui', function (req, res){
+   const fs = require('fs') 
+  
+   fs.readFile('Input.txt', (err, data) => { 
+     if (err) throw err; 
+  res.type('html');
+  res.send(`
+    <p>console.log(data.toString());</p>
+  `); 
+}); 
+
 app.get('/status', function (req, res) {
   res.send('active');
 });
