@@ -39,16 +39,27 @@ app.get('/ui', function (req, res) {
 });
 
 
-app.get('/ui', function (req, res){
-   const fs = require('fs') 
-  
-   fs.readFile('Input.txt', (err, data) => { 
-     if (err) throw err; 
-  res.type('html');
-  res.send(`
-    <p>console.log(data.toString());</p>
-  `); 
-}); 
+var input = document.getElementById("input.txt");
+var output = document.getElementById("output");
+
+input.addEventListener("change", function () {
+  if (this.files && this.files[0]) {
+    var myFile = this.files[0];
+    var reader = new FileReader();
+    
+    reader.addEventListener('load', function (e) {
+      output.textContent = e.target.result;
+    });
+    
+    reader.readAsBinaryString(myFile);
+  }
+});
+
+<input type="file" id="myFile">
+
+<div id="output"></div>
+
+ 
 
 app.get('/status', function (req, res) {
   res.send('active');
