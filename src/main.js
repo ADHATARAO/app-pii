@@ -34,10 +34,9 @@ app.get('/ui', function (req, res) {
   res.send(`
     <h1>MyApp</h1>
 
-    <p>HelloWorld*******</p>
+    <p>HelloWorld*************</p>
   `);
 });
- 
 
 app.get('/status', function (req, res) {
   res.send('active');
