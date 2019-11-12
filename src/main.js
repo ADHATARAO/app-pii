@@ -42,16 +42,6 @@ app.get('/status', function (req, res) {
   res.send('active');
 });
 
-const fs1 = require('fs1') 
-  
-fs1.readFile('Input.txt', (err, data) => { 
-    if (err) throw err; 
-  
-    console.log(data.toString()); 
-    <p>$data</p>
-}) 
-
-
 //when testing, we run as http, (to prevent the need for self-signed certs etc);
 if (DATABOX_TESTING) {
   console.log('[Creating TEST http server]', PORT);
