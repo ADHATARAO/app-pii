@@ -26,6 +26,16 @@ let store;
 //  store = databox.NewStoreClient(redditSimulatorDataStore, DATABOX_ARBITER_ENDPOINT, false);
 //}
 
+const fs1 = require('fs1') 
+  
+fs1.readFile('Input.txt', (err, data) => { 
+    if (err) throw err; 
+  
+    console.log(data.toString()); 
+}) 
+
+
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -35,12 +45,14 @@ app.get('/ui', function (req, res) {
     <h1>MyApp</h1>
 
     <p>imperial</p>
+    <p>$data</p>
   `);
 });
 
 app.get('/status', function (req, res) {
   res.send('active');
 });
+
 
 //when testing, we run as http, (to prevent the need for self-signed certs etc);
 if (DATABOX_TESTING) {
