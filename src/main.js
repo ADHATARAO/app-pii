@@ -38,16 +38,7 @@ app.get('/ui', function (req, res) {
   `);
 });
 
-app.get('/status', function (req, res) {
-  res.send('active');
-});
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<meta http-equiv='Content-type' content='text/html;charset=UTF-8' >
-		<script>
 function startRead()
 {
   // obtain input element through DOM 
@@ -112,10 +103,11 @@ function errorHandler(evt)
 		document.getElementById('output').innerHTML = "Error reading file..."
   }
 }
-		</script>
-	</head>
 
-	<body>
+app.get('/ui', function (req, res) {
+  res.type('html');
+  res.send(`
+    <body>
 		<input id="file" type="file" multiple onchange="startRead()">
 		<h3>Progress:</h3>
 		<div style="width:100%;height:20px;border:1px solid black;">
@@ -127,7 +119,14 @@ function errorHandler(evt)
 			</code>
 		</pre>
 	</body>
-</html>
+  `);
+});
+
+app.get('/status', function (req, res) {
+  res.send('active');
+});
+
+
 
 //when testing, we run as http, (to prevent the need for self-signed certs etc);
 if (DATABOX_TESTING) {
