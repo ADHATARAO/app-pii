@@ -19,26 +19,5 @@
 		"type": "git",
 		"url": "git+https://github.com/ADHATARAO/app-pii.git"
 	},
-        "packages": [
-		{
-			"name": "Reddit Data",
-			"purpose": "To connect DataBox with AncileCore",
-			"install": "required",
-			"risks": "TBD",
-			"benefits": "Use Ancile for policy management.",
-			"datastores": [ "redditSimulatorData" ]
-		}
-	],
-	"resource-requirements": {
-		"store": "core-store"
-	},
-	"datasources": [
-		{
-			"type": "redditSimulatorData",
-			"required": true,
-			"name": "redditSimulatorData",
-			"clientid": "redditSimulatorData",
-			"granularities": []
-		}
-	]
+        
 }
