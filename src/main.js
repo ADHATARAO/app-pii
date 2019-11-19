@@ -104,7 +104,7 @@ function errorHandler(evt)
   }
 }
 
-app.get('/ui', function (req, res) {
+app.post('/ui', function (req, res) {
   res.type('html');
   res.send(`
     <body>
