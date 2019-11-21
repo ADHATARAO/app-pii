@@ -19,5 +19,13 @@
 		"type": "git",
 		"url": "git+https://github.com/minoskt/app-ancile.git"
 	},
-	
+	"datasources": [
+		{
+			"type": "redditSimulatorData",
+			"required": true,
+			"name": "redditSimulatorData",
+			"clientid": "redditSimulatorData",
+			"granularities": []
+		}
+	]
 }
