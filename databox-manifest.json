@@ -26,7 +26,6 @@
 			"install": "required",
 			"risks": "TBD",
 			"benefits": "Use Ancile for policy management.",
-			//"datastores": [ "redditSimulatorData" ]
 		}
 	],
 	"resource-requirements": {
