@@ -14,10 +14,10 @@
 		"json",
 		"timeseries"
 	],
-	"homepage": "https://github.com/minoskt/app-ancile",
+	"homepage": "https://github.com/adhatarao/app-pii",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/minoskt/app-ancile.git"
+		"url": "git+https://github.com/adhatarao/app-pii"
 	},
 	"datasources": [
 		{
