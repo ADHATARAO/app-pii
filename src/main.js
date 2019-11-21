@@ -34,7 +34,7 @@ app.get('/ui', function (req, res) {
   res.send(`
     <h1>MyApp</h1>
 
-    <p>HelloWorld*************!!!!</p>
+    <p>PII information goes here!!!!</p>
   `);
 });
 

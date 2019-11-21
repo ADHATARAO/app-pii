@@ -1,9 +1,9 @@
 {
 	"manifest-version": 1,
-	"name": "app-ancile",
+	"name": "app-PII",
 	"version": "0.0.1",
-	"description": "A Databox app to support Cornell Tech's Ancile Project",
-	"author": "Kleomenis Katevas <k.katevas@imperial.ac.uk> ()",
+	"description": "A Databox app to display PII",
+	"author": "supriya.adhatarao@gmail.com",
 	"license": "MIT",
 	"databox-type": "app",
 	"tags": [
@@ -14,10 +14,10 @@
 		"json",
 		"timeseries"
 	],
-	"homepage": "https://github.com/adhatarao/app-pii",
+	"homepage": "https://github.com/ADHATARAO/app-pii",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/adhatarao/app-pii"
+		"url": "https://github.com/ADHATARAO/app-pii"
 	},
 	"datasources": [
 		{
