@@ -21,10 +21,10 @@
 	},
 	"datasources": [
 		{
-			"type": "redditSimulatorData",
+			"type": "***",
 			"required": true,
-			"name": "redditSimulatorData",
-			"clientid": "redditSimulatorData",
+			"name": "***",
+			"clientid": "***",
 			"granularities": []
 		}
 	]
