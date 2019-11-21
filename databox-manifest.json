@@ -21,10 +21,10 @@
 	},
 	"datasources": [
 		{
-			"type": "***",
+			"type": "driver-pii",
 			"required": true,
-			"name": "***",
-			"clientid": "***",
+			"name": "driver-pii",
+			"clientid": "driver-pii",
 			"granularities": []
 		}
 	]
