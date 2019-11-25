@@ -104,22 +104,24 @@ function errorHandler(evt)
   }
 }
 
-app.post('/ui', function (req, res) {
-  res.type('html');
-  res.send(`
-    <body>
-		<input id="file" type="file" multiple onchange="startRead()">
-		<h3>Progress:</h3>
-		<div style="width:100%;height:20px;border:1px solid black;">
-		<div id="bar" style="background-color:#45F;width:0px;height:20px;"></div>
-		</div>
-		<h3>File contents:</h3>
-		<pre>
-			<code id="output">
-			</code>
-		</pre>
-	</body>
-  `);
+
+app.get('/ui', function (req, res, next) {
+  res.send(
+      `
+      <html>
+      <body style="width:100%">
+      <div style="position: absolute; width:70%; max-width:600px; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+        <img style="float:right" src="https://developers.meethue.com/wp-content/themes/hue_developer_theme/img/site_logo.png" />
+        <h1>Pair your Philips hue bridge</h1>
+        <h3>Enter IP below, then press button on bridge, then click Pair bridge</h3>
+        <form method="post" action="`+ basePath + `/ui/configure">
+          Enter bridge IP address: <input type="text" value="" name="bridge_ip" />
+          <input type="submit", value="Pair bridge" />
+        </form>
+      </div>
+      </body>
+      `
+    )
 });
 
 app.get('/status', function (req, res) {
