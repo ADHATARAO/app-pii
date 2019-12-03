@@ -34,7 +34,7 @@ app.get('/ui', function (req, res) {
   res.send(`
     <h1>MyApp</h1>
 
-    <p>PII information goes here!!!!</p>
+    <p>says hello to u ;) !!!!</p>
   `);
 });
 
@@ -105,23 +105,20 @@ function errorHandler(evt)
 }
 
 
-app.get('/ui', function (req, res, next) {
-  res.send(
-      `
-      <html>
-      <body style="width:100%">
-      <div style="position: absolute; width:70%; max-width:600px; top: 50%; left: 50%; transform: translate(-50%, -50%)">
-        <img style="float:right" src="https://developers.meethue.com/wp-content/themes/hue_developer_theme/img/site_logo.png" />
-        <h1>Pair your Philips hue bridge</h1>
-        <h3>Enter IP below, then press button on bridge, then click Pair bridge</h3>
-        <form method="post" action="`+ basePath + `/ui/configure">
-          Enter bridge IP address: <input type="text" value="" name="bridge_ip" />
-          <input type="submit", value="Pair bridge" />
-        </form>
-      </div>
-      </body>
-      `
-    )
+app.post('/ui/configure', function (req, res) {
+  var ip_address = (req.body.bridge_ip);
+
+  console.log(req.body.bridge_ip);
+
+  hue.findHub(ip_address)
+    .then((data) => {
+      app.set("configured", true)
+      res.redirect(302, "/ui")
+    })
+    .catch((err) => {
+      res.status(401).send("Failed to find hue bridge at <b>" + err + "</b>");
+    });
+
 });
 
 app.get('/status', function (req, res) {
