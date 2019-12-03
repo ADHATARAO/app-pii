@@ -1,7 +1,7 @@
 {
   "name": "app-pii",
   "version": "1.0.0",
-  "description": "A Databox app to support Cornell Tech's Ancile Project",
+  "description": "A Databox app to say hello",
   "config": {
     "registry": "localhost:5000"
   },
@@ -28,7 +28,7 @@
     "ancile",
     "stream"
   ],
-  "author": "Kleomenis Katevas",
+  "author": "Supriya Adhatarao",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ADHATARAO/app-pii.git"
