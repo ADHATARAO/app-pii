@@ -10,8 +10,6 @@
     "start": "node ./src/main.js",
     "build": "docker build -t databox/app-pii .",
     "deploy": "docker tag databox/app-pii $npm_package_config_registry/app-pii && docker push $npm_package_config_registry/app-pii",
-    "build-arm": "docker build -f Dockerfile-arm -t databox/app-pii-arm .",
-    "deploy-arm": "docker tag databox/app-pii-arm $npm_package_config_registry/app-pii-arm && docker push $npm_package_config_registry/app-pii-arm",
     "clean": "node ./node_modules/modclean/bin/modclean.js -p ./node_modules/ -r",
     "getshell": "docker exec -i -t app-pii /bin/bash",
     "kill": "docker kill app-pii",
